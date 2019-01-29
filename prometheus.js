@@ -7,22 +7,19 @@ var St=Et-10;
 
 
 //Initialize the queries
-var query={
-	"queries":
-		[
+var queries=[
 		//	"node_memory_MemAvailable_bytes",
 	//		"node_procs_running",
 			"node_memory_free_bytes_total"
-		]
-	};
+		];
 
 
-for(var i=0;i<query.queries.length;i++){
+for(var i=0;i<queries.length;i++){
 
 
 	//Create object for generating token
 	var getMetric = {
-		uri: 'http://localhost:9090/api/v1/query?query='+query.queries[i]+'&time='+Et+'&_='+St,
+		uri: 'http://localhost:9090/api/v1/query?query='+queries[i]+'&time='+Et+'&_='+St,
 	  	method: 'GET',
 	  	headers: {
 	      	'Content-Type': 'application/json',
